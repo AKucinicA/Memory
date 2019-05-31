@@ -33,16 +33,27 @@ void initJeu(Carte j[], int nbPaires){
 
 }
 
+
 int main(int argc, char const *argv[]){
 
 	int nbPaires=3;
+	time_t begin,end;
+	int record;
 
 	Carte jeu[2*nbPaires + 1];
 	initJeu(jeu,nbPaires);
 
+
 	for(int i=0; i<2*nbPaires; i++){
 		retourner(&jeu[i]);
 	}
+	//Quand la partie commence
+	begin = clock();
+
+	//à la fin de la partie
+	end = clock();
+
+	record = (int) difftime(end,begin);
 
 	return EXIT_SUCCESS;
 }
