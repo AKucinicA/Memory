@@ -27,10 +27,39 @@ int getEtat(Carte c){
 
 void initJeu(Carte j[], int nbPaires){
 	int i = 0;
-	while(i++ < 2*nbPaires + 1){
-		initCarte(&j[i],i%nbPaires);
+	while(i < 2*nbPaires + 1){
+		if(i==0) initCarte(&j[0],0);
+		else initCarte(&j[i],(int)(i/2));
+		i++;
 	}
 
+
+	//for(int i = 0; i<2*nbPaires ; i++){
+	//	printf("%d\n", j[i].valeur);	
+	//}
+	//printf("fin de fonction !\n");
+	
+}
+
+void initJeuAleat(Carte j[], int nbPaires){
+	initJeu(j, nbPaires);
+	
+	//printf("-------------\n");
+	Carte c;
+	int i = 0;
+	int k = 0;
+	int l = 0;
+	
+	while(i++<100){
+		k = rand()%(2*nbPaires -1);
+		l = rand()%(2*nbPaires -1);
+		c = j[k];
+		j[k] = j[l];
+		j[l] = c;
+	}
+	//for(int i = 0; i<2*nbPaires; i++){
+	//	printf("%d\n", j[i].valeur);
+	//}
 }
 
 int main(int argc, char const *argv[]){
