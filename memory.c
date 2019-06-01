@@ -64,14 +64,20 @@ void initJeuAleat(Carte j[], int nbPaires){
 
 int main(int argc, char const *argv[]){
 
-	int nbPaires=3;
+	int nbPaires=6;
 
-	Carte jeu[2*nbPaires + 1];
-	initJeu(jeu,nbPaires);
+	Carte jeuAleat[2*nbPaires];
+	//initJeu(jeuAleat,nbPaires);
 
-	for(int i=0; i<2*nbPaires; i++){
-		retourner(&jeu[i]);
-	}
+	//for(int i = 0;i<2*nbPaires; i++){
+	//	printf("%d\n", jeuAleat[i].valeur);
+	//}
+
+	initJeuAleat(jeuAleat, nbPaires);
+
+	//for(int i = 0;i<2*nbPaires; i++){
+	//	printf("%d\n", jeuAleat[i].valeur);
+	//}
 
 	return EXIT_SUCCESS;
 }
